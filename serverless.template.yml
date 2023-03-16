@@ -1,0 +1,38 @@
+version: 1.0.9
+name: web-record
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Deploy a web record application
+description-i18n:
+  zh-cn: 使用 COS + 云函数 + CFS + FFmpeg，快速构建高可用、并行处理、实时日志、高度自定义 Web 视频录制和转码服务。
+keywords: web-record, transcode, tencent, serverless, express
+repo: https://github.com/tencent-serverless-app/web-record
+readme: https://github.com/tencent-serverless-app/web-record/tree/master/README.md
+license: GPL-3.0
+
+src:
+  src: ./
+  include:
+    - .env.example
+  exclude:
+    - .env
+    - 'serverless.template.yml'
+    - 'build'
+    - 'build.sh'
+    - 'yarn.lock'
+    - 'package-lock.json'
+    - '.gitattributes'
+    - '.gitignore'
+    - 'image.json'
+    - 'image-online.json'
+    - 'sync-image-info.js'
+    - 'update-version.js'
+    - '.git/**'
+    - 'record/**'
+    - 'transcode/**'
+    - 'docker/**'
+    - 'dist/**'
+    - 'docs/README.md'
+    - 'docs/develop.md'
+    - 'docs/api.md'
+    - 'docs/faq.md'

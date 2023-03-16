@@ -1,0 +1,75 @@
+#!/bin/bash
+
+set -e
+
+success_icon="\033[32m ✔\033[0m"
+build_dir='dist'
+# 更新升级应用后需要修改 tag_name 与 package.json 中版本一致
+
+module_name="all"
+tag_name=$(node -p "require('./package.json').version")
+
+while getopts ":m:t:" opt
+do
+  case $opt in
+    m)
+      module_name=${OPTARG}  
+      break ;;
+    t)
+      tag_name=${OPTARG}
+      break ;;
+  esac
+done
+
+# 注入配置参数
+source ./.env
+
+# 镜像构件函数
+buildImage() {
+  module=$1
+  image_name=$1
+  tag_name=$2
+
+  echo "++++++++++++++++++++++++++++++++++++++++++"
+  echo "Building ${module} image version ${tag_name}..."
+
+  # 准备构建目录
+  rm -rf ./$build_dir
+  mkdir -p ./$build_dir
+  cp -aL $1 libs ./$build_dir
+  echo -e "$success_icon 创建构建目录"
+
+  pushd ./$build_dir
+  # 镜像服务域名
+  server_url="$registry_name.tencentcloudcr.com"
+
+  # 开始构件
+  image_url=$server_url/$namespace/$image_name
+
+  # 镜像名称
+  target_name="$image_url:$tag_name"
+
+  # 1. 登录，需要输入登录密钥
+  docker login "$server_url" --username=$username --password=$password
+  # 2. 构建
+  docker build -f $module/Dockerfile -t $target_name .
+  echo -e "$success_icon 构件镜像"
+  # 3. 推送
+  docker push $target_name
+  echo -e "$success_icon 同步镜像"
+  popd
+
+  echo "Building ${module} image success"
+  echo "++++++++++++++++++++++++++++++++++++++++++"
+}
+
+if [ "$module_name" != "all" ]
+then
+  buildImage $module_name $tag_name
+else
+  # 构建 record
+  buildImage record $tag_name
+
+  # 构建 transcode
+  buildImage transcode $tag_name
+fi

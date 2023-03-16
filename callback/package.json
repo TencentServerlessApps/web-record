@@ -1,0 +1,16 @@
+{
+  "name": "callback",
+  "version": "1.0.24",
+  "description": "callback function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bent": "^7.3.12",
+    "common": "file:../common"
+  }
+}

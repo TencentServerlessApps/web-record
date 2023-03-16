@@ -1,0 +1,57 @@
+{
+  "_from": "vod-node-sdk@^1.1.0",
+  "_id": "vod-node-sdk@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-3eEuqncNVnsJmHyXqvM1jAR8pFo1iRFLb91enCplP+/0saF7BA5YlQf0lJx8FEfj5T4Q7Q01yQdcJT8EuuwQRw==",
+  "_location": "/vod-node-sdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "vod-node-sdk@^1.1.0",
+    "name": "vod-node-sdk",
+    "escapedName": "vod-node-sdk",
+    "rawSpec": "^1.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.1.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vod-node-sdk/-/vod-node-sdk-1.1.0.tgz",
+  "_shasum": "68f967a234ae3b393a25c3f4c599b3bb74fade58",
+  "_spec": "vod-node-sdk@^1.1.0",
+  "_where": "/Users/abel/Documents/PROJECTS/web-record/transcode",
+  "author": {
+    "name": "jianguoxu"
+  },
+  "bugs": {
+    "url": "https://github.com/tencentyun/vod-node-sdk/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "tencentcloud-sdk-nodejs": "file:./tencentcloud-sdk-nodejs"
+  },
+  "deprecated": false,
+  "description": "vod node sdk",
+  "devDependencies": {
+    "mocha": "^7.2.0"
+  },
+  "homepage": "https://github.com/tencentyun/vod-node-sdk#readme",
+  "keywords": [
+    "tencent cloud",
+    "vod-sdk",
+    "vod-node-sdk"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vod-node-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tencentyun/vod-node-sdk.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "1.1.0"
+}

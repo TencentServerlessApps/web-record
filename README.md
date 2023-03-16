@@ -19,6 +19,16 @@
 - callback -- 回调云函数实现代码
 - diagnose -- 健康检查云函数实现代码
 - upload -- 转存云函数实现代码
+- record -- 录制云函数实现代码
+- transcode -- 转码云函数实现代码
+```
+
+## 构建指导
+1、根目录下执行`npm i`安装依赖   
+2、构建基础镜像----docker目录下构建基础镜像   
+3、构建record合transcode镜像，配置`.env`文件，根目录下执行命令：
+```text
+npm run build
 ```
 
 ## 部署说明

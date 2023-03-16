@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="chrome">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/chrome.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
